@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog List</title>
+</head>
+<body>
+    <h1>Blog List</h1>
+    <a href="{% url 'add_blog' %}">Create New Blog Post</a>
+    <ul>
+        {% for blog in blogs %}
+            <li>
+                <a href="{% url 'blog_detail' blog.pk %}">{{ blog.post_title }}</a>
+                <p>{{ blog.post_details|truncatewords:30 }}</p>
+                <a href="{% url 'update_blog' blog.pk %}">Edit</a>
+                <a href="{% url 'delete_blog' blog.pk %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

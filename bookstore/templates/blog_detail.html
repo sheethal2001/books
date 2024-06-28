@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ blog.post_title }}</title>
+</head>
+<body>
+    <h1>{{ blog.post_title }}</h1>
+    <p>{{ blog.post_details }}</p>
+    <p><small>Posted on: {{ blog.post_dates }}</small></p>
+    <p><small>Last updated: {{ blog.post_updated }}</small></p>
+    <a href="{% url 'blog_list' %}">Back to Blog List</a>
+</body>
+</html>
